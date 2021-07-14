@@ -17,7 +17,7 @@ class PageOne extends StatelessWidget {
             padding: EdgeInsets.all(2.0),
             child: CircleAvatar(
               radius: 100,
-              backgroundImage: AssetImage('assets/profile.jpg'),
+              backgroundImage: AssetImage('assets/profile0.jpg'),
             ),
           ),
           Padding(

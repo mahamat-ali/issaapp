@@ -23,7 +23,7 @@ class _PageThreeState extends State<PageThree> {
             child: SizedBox(
               width: 200,
               child: Image(
-                image: AssetImage('assets/profile.jpg'),
+                image: AssetImage('assets/profile0.jpg'),
               ),
             ),
           ),
