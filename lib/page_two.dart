@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swipper/flutter_card_swiper.dart';
+import 'package:issaapp/models/swipe_card_details.dart';
 
 class PageTwo extends StatefulWidget {
   const PageTwo({Key? key}) : super(key: key);
@@ -17,13 +18,16 @@ class _PageTwoState extends State<PageTwo> {
         height: 450,
         child: Swiper(
           itemBuilder: (BuildContext context, int index) {
+            print(index);
+            final person = SwipeData.samples[index];
+
             return Stack(
               alignment: AlignmentDirectional.center,
               children: [
                 Container(
                   child: Image(
                     fit: BoxFit.cover,
-                    image: AssetImage('assets/profile.jpg'),
+                    image: AssetImage(person.imageUrl.toString()),
                   ),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(600),
@@ -34,7 +38,7 @@ class _PageTwoState extends State<PageTwo> {
                   child: Column(
                     children: [
                       Text(
-                        'Name',
+                        person.name,
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 26.0,
@@ -43,7 +47,7 @@ class _PageTwoState extends State<PageTwo> {
                       SizedBox(
                         width: 240,
                         child: Text(
-                          'Nam sodales semper nunc, non porta massa ornare et. Donec justo lectus, pulvinar in auctor a, tincidunt at quam. In non tempor tellus, sit amet malesuada metus',
+                          person.description,
                           softWrap: true,
                           textAlign: TextAlign.justify,
                           maxLines: 3,
@@ -59,7 +63,7 @@ class _PageTwoState extends State<PageTwo> {
               ],
             );
           },
-          itemCount: 3,
+          itemCount: SwipeData.samples.length,
           pagination: new SwiperPagination(),
           control: new SwiperControl(),
         ),
